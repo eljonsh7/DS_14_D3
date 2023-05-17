@@ -83,7 +83,7 @@
     
         $PW_Hashed = hash('sha256', $password);
     
-        $stmt = $conn->prepare("INSERT INTO `users` VALUES (?, ?)");
+        $stmt = $conn->prepare("INSERT INTO `users`(`Email`, `Password`) VALUES (?, ?)");
         $stmt->bind_param('ss', $email, $PW_Hashed);
         $stmt->execute();
     }
